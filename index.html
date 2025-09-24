@@ -1,0 +1,53 @@
+<!-- index.html
+  Psychotherapy Companion (front-end)
+  - Keep this file minimal: structure, accessibility labels, and references to styles + script.
+  - Comments provide summary-level explanations (what & why), not my private chain-of-thought.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Companion — Supportive Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Companion — Supportive Chat</h1>
+    <p class="tagline">A supportive listening companion. Not a substitute for professional help.</p>
+  </header>
+
+  <main class="app-main" role="main">
+    <!-- Chat column -->
+    <section class="chat-panel" aria-label="Conversation">
+      <div id="messages" class="messages" aria-live="polite">
+        <!-- message elements appended here -->
+      </div>
+
+      <form id="inputForm" class="input-area" aria-label="Send a message">
+        <textarea id="userInput" placeholder="How are you feeling? (type here)" rows="1" aria-label="Message input"></textarea>
+        <div class="controls">
+          <button type="button" id="breathBtn" class="control-btn">Breathing</button>
+          <button type="button" id="groundBtn" class="control-btn">Grounding</button>
+          <button type="submit" id="sendBtn" class="send-btn">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Sidebar with quick resources and disclaimers -->
+    <aside class="sidebar" aria-label="Resources and tools">
+      <section class="card">
+        <h2>Quick Coping Tools</h2>
+        <ol>
+          <li>4-4-4 breathing — follow the guided breathing.</li>
+          <li>5-4-3-2-1 grounding — name sensations to reorient.</li>
+          <li>Schedule a tiny self-care step for today.</li>
+        </ol>
+      </section>
+
+      <section class="card resources">
+        <h2>Immediate Help</h2>
+        <p><strong>Samaritans (Ireland/UK):</strong> <a href="tel:116123">116 123</a>. Available 24/7. (Free). :contentReference[oaicite:5]{index=5}</p>
+        <p><strong>HSE urgent help (Ireland):</strong> See guidance on urgent mental health care. :contentReference[oaicite:6]{index=6}</p>
+        <p><strong>US 988 Lifeline:</strong> Call, text, or chat 988. :contentReference[oaicite:7]{index=7}</p>
+        <p class="small">If you are in immediate
