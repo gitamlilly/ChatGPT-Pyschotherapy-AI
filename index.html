@@ -22,4 +22,71 @@
     <div class="header-right">
       <button id="downloadJson" class="small">Download JSON</button>
       <button id="downloadPdf" class="small">Download PDF</button>
-      <label class="toggle"><input type="checkbox" id="useServer" checked /> Use server LLM</lab
+      <label class="toggle"><input type="checkbox" id="useServer" checked /> Use server LLM</label>
+    </div>
+  </header>
+
+  <main class="app-main" role="main">
+    <!-- Chat Column -->
+    <section class="chat-column" aria-label="Conversation">
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <div id="typingIndicator" class="typing-indicator" hidden>Companion is typing...</div>
+
+      <form id="inputForm" class="input-area" aria-label="Send a message">
+        <textarea id="userInput" placeholder="I'm feeling..." rows="1" aria-label="Message input"></textarea>
+        <div class="controls">
+          <button type="button" id="breathBtn" class="control-btn">Breathing</button>
+          <button type="button" id="groundBtn" class="control-btn">Grounding</button>
+          <button type="submit" id="sendBtn" class="send-btn">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right column: tools & visualization -->
+    <aside class="right-column" aria-label="Tools and visualization">
+      <div class="card">
+        <h2>Emotion Timeline</h2>
+        <canvas id="emotionChart" width="400" height="220" aria-label="Emotion timeline"></canvas>
+        <p class="small">The chart tracks simple sentiment/emotion estimates extracted from your messages.</p>
+      </div>
+
+      <div class="card">
+        <h2>Quick Tools</h2>
+        <ol>
+          <li>4-4-4 breathing — try it for 1 minute.</li>
+          <li>5-4-3-2-1 grounding — reorient using senses.</li>
+          <li>Export transcript to share with a clinician or save for reflection.</li>
+        </ol>
+      </div>
+
+      <div class="card resources">
+        <h2>Immediate Help</h2>
+        <p><strong>Samaritans (Ireland/UK):</strong> <a href="tel:116123">116 123</a> (24/7).</p>
+        <p><strong>US 988 Lifeline:</strong> Call or text <strong>988</strong>.</p>
+        <p class="small">If you are in immediate danger, call your local emergency number (e.g., 999 / 112 / 911).</p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Crisis overlay -->
+  <div id="crisisOverlay" class="overlay" role="dialog" aria-modal="true" hidden>
+    <div class="overlay-content">
+      <h2 style="color:#8b0000">If you are thinking about hurting yourself</h2>
+      <p>I'm sorry you're feeling this way. Please contact emergency services or a crisis line now.</p>
+      <div class="overlay-actions">
+        <a class="btn urgent" href="tel:112">Call Emergency (112)</a>
+        <a class="btn urgent" href="tel:116123">Call Samaritans (116 123)</a>
+        <button id="overlayClose" class="btn">Okay — show me resources</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <small>Companion Pro — for support and reflection. Not a replacement for medical care.</small>
+  </footer>
+
+  <!-- Main script -->
+  <script src="app.js" defer></script>
+</body>
+</html>
